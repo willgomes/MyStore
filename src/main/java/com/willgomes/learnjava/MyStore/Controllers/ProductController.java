@@ -26,13 +26,13 @@ import io.swagger.annotations.ApiResponses;
 public class ProductController {
 
     @ApiResponses({ 
-        @ApiResponse(code = 200, message = "Ok"), 
+        @ApiResponse(code = 201, message = "Created"), 
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 500, message = "Internal Server Error") 
     })
     @PostMapping(value = "/products", produces = { "application/json" }, consumes = { "application/json" })
     public ResponseEntity<HttpStatus> Post(@RequestBody final ProductViewModel productViewModel) {
-        return ResponseEntity.ok(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @ApiResponses({ 
