@@ -1,12 +1,17 @@
-package com.willgomes.learnjava.MyStore.Models;
+package com.willgomes.learnjava.MyStore.Domains.Entities;
 
 import java.util.List;
 
-/**
- * ProductViewModel
- */
-public class ProductViewModel {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Product
+ */
+@Document(collection = "product")
+public class Product {
+
+    @Id
     private String _id;
     private String _name;
     private String _brand;
@@ -29,7 +34,7 @@ public class ProductViewModel {
         return _description;
     }
 
-    public void setDescription(final String description) {
+    public void setDescription(String description) {
         this._description = description;
     }
 
@@ -37,7 +42,7 @@ public class ProductViewModel {
         return _category;
     }
 
-    public void setCategory(final List<String> category) {
+    public void setCategory(List<String> category) {
         this._category = category;
     }
 
@@ -45,12 +50,11 @@ public class ProductViewModel {
         return _brand;
     }
 
-    public void setBrand(final String brand) {
+    public void setBrand(String brand) {
         this._brand = brand;
     }
 
-    public void setName(final String name) {
+    public void setName(String name) {
         this._name = name;
     }
-    
 }
