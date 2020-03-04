@@ -16,6 +16,9 @@ public class ProductMapper {
 
     public Product MappingProductViewModelToProduct(ProductViewModel productViewModel){
         Product product = new Product();
+        if(productViewModel.getId() != null){
+            product.setId(productViewModel.getId());
+        }
         product.setName(productViewModel.getName());
         product.setCategory(productViewModel.getCategory());
         product.setBrand(productViewModel.getBrand());

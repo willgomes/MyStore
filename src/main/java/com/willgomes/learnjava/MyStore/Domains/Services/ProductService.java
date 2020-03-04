@@ -39,7 +39,7 @@ public class ProductService {
     }
 
     public void update(Product product){
-        //TODO: Implement update
+        _productRepository.save(product);
     }
 
 }
